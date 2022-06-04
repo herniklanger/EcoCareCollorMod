@@ -16,7 +16,7 @@ using System.Text;
 
 namespace Eco.EM.Admin
 {
-    public class ExperienceController : IModKitPlugin, IInitializablePlugin, IChatCommandHandler
+    public class ExperienceController : IModKitPlugin, IInitializablePlugin
     {
         // CHANGE THIS IF REQUIRED :: The stars you want new players to start with
         public int startingStars = 1;
@@ -33,10 +33,8 @@ namespace Eco.EM.Admin
         // Don't change anything below.
         private static float Multiplier => DifficultySettings.Obj.Config.DifficultyModifiers.SpecialtyCostMultiplier;
 
-        [ChatCommand("XP level related commands")]
         public static void XPCosts() { }
 
-        [ChatSubCommand("XpCosts", "Display the cost in xp of your next level up", "nextXP", ChatAuthorizationLevel.User)]
         public static void GetNextCost(User user)
         {
             StringBuilder sb = new();
